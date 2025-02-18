@@ -1,0 +1,58 @@
+File operations
+ The folowing functions, methods, and keywords are used with operations involving
+ les.
+ with
+ Handles errors and manages external resources
+ with open("logs.txt", "r") as file:
+ Used to handle errors and manage external resources while opening a le; the
+ variable file stores the le information while inside of the with statement;
+ managesresources by closing the le a erexiting the with statement
+ open()
+ Opensa leinPython
+ with open("login_attempts.txt", "r") as file:
+ Opensthe le"login_attempts.txt"inordertoreadit("r")
+with open("update_log.txt", "w") as file:
+ Opensthe le"update_log.txt"intothevariable filein order to write over
+ its contents ("w")
+ with open(import_file, "a") as file:
+ Opensthe leassignedtotheimport_filevariable into the variable file in
+ order to append information to the end of it ("a")
+ as
+ Assigns a variable that references another object
+ with open("logs.txt", "r") as file:
+ Assigns the file variable to reference the output of the open() function
+ .read()
+ Converts les into strings; returns the content of an open le as a string by default
+ with open("login_attempts.txt", "r") as file:
+ file_text = file.read()
+ Converts the le object referenced in the file variable into a string and then
+ stores this string in the file_text variable
+ .write()
+ Writes string data to a speci ed le
+ with open("access_log.txt", "a") as file:
+ file.write("jrafael")
+ Writes the string "jrafael" to the "access_log.txt" le; because the second
+ argument in the cal to the open() function is "a", this string is appended to
+ the end ofthe le
+Parsing
+ The folowing methods are useful when parsing data.
+ .split()
+ Converts a string into a list; separates the string based on the character that is passed
+ in as an argument; if an argument is not passed in, it wil separate the string each time
+ it encounters whitespace characters such as a space or return
+ approved_users = "elarson,bmoreno,tshah".split(",")
+ Converts the string "elarson,bmoreno,tshah" into the list
+ ["elarson","bmoreno","tshah"]byspli ingthestring into a separate list
+ element at each occurrence of the "," character
+ removed_users = "wjaffrey jsoto abernard".split()
+ Converts the string "wjaffrey jsoto abernard"intothelist
+ ["wjaffrey","jsoto","abernard"]byspli ingthestring into a separate
+ list element at each space
+ .join()
+ Concatenates the elements of an iterable into a string; takes the iterable to be
+ concatenated as an argument; is appended to a character that wil separate each
+ element once they are joined into a string
+ approved_users = ",".join(["elarson", "bmoreno", "tshah"])
+ Concatenates the elements of the list ["elarson","bmoreno","tshah"]
+ into the string "elarson,bmoreno,tshah" , separating each element with
+ the ","character within the strin
