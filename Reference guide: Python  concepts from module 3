@@ -1,0 +1,138 @@
+ Built-in functions
+ The folowing built-in functions are commonly used in Python.
+ str()
+ Converts the input object to a string
+ str(10)
+ Converts the integer 10 to the string "10"
+len()
+ Returns the number of elements in an object
+ print(len("security"))
+ Returns and displays 8, the number of characters in the string "security"
+ String methods
+ The folowing methods can beapplied to strings in Python.
+ .upper()
+ Returns a copy of the string in al uppercase le ers
+ print("Security".upper())
+ Returns and displays a copy of the string "Security" as "SECURITY"
+ .lower()
+ Returns a copy of the string in al lowercase le ers
+ print("Security".lower())
+ Returns and displays a copy of the string "Security" as "security"
+ .index()
+ Finds the rst occurrence of the input in a string and returns its location
+ print("Security".index("c"))
+ Finds the rst occurrence of the character "c" in the string "Security" and
+ returns and displays its index of 2
+List methods
+ The folowing methods can beapplied to lists in Python.
+ .insert()
+ Addsanelementin aspeci cposition inside the list
+ username_list = ["elarson", "fgarcia", "tshah"]
+ username_list.insert(2,"wjaffrey")
+ Addsthe element "wjaffrey"atindex 2totheusername_list;thelist
+ becomes["elarson", "fgarcia", "wjaffrey", "tshah"]
+ .remove()
+ Removesthe rstoccurrence of aspeci celementinside a list
+ username_list = ["elarson", "bmoreno", "wjaffrey", "tshah"]
+ username_list.remove("elarson")
+ Removestheelement "elarson"fromtheusername_list;thelist becomes
+ ["fgarcia", "wjaffrey", "tshah"]
+ .append()
+ Addsinput to the end of alist
+ username_list = ["bmoreno", "wjaffrey", "tshah"]
+ username_list.append("btang")
+ Addsthe element "btang"totheendoftheusername_list;thelist
+ becomes["fgarcia", "wjaffrey", "tshah", "btang"]
+ .index()
+ Finds the rst occurrence of an element in a list and returns its index
+ username_list = ["bmoreno", "wjaffrey", "tshah", "btang"]
+ print(username_list.index("tshah"))
+ Finds the rst occurrence of the element "tshah" in the username_list and
+ returns and displays its index of 2
+Additional syntax for working with strings and lists
+ The folowing syntax is useful when working with strings and lists.
+ + (concatenation)
+ Combines twostrings or lists together
+ device_id = "IT"+"nwp12"
+ Combines the string "IT" with the string "nwp12" and assigns the combined
+ string of "ITnwp12" to the variable device_id
+ users = ["elarson", "bmoreno"] + ["tshah", "btang"]
+ Combines the list ["elarson", "bmoreno"]withthelist ["tshah",
+ "btang"]andassigns the combined list of ["elarson", "bmoreno",
+ "tshah", "btang"]tothevariableusers
+ [] (bracketnotation)
+ Uses indices to extract parts of a string or list
+ print("h32rb17"[0])
+ Extracts the character at index 0, which is ("h"), from the string "h32rb17"
+ print("h32rb17"[0:3])
+ Extracts the slice [0:3], which is ("h32"), from the string "h32rb17"; the rst
+ index in the slice (0) is included in the slice but the second index in the slice (3)
+ is excluded
+ username_list = ["elarson", "fgarcia", "tshah"]
+ print(username_list[2])
+ Extracts the element at index 2, which is ("tshah"), from the username_list
+Regular expressions
+ The folowing re modulefunction and regular expression symbols are useful when
+ searching for pa erns in strings.
+ re.findall()
+ Returns a list of matches to a regular expression
+ import re
+ re.findall("a53", "a53-32c .E")
+ Returns a list of matches to the regular expression pa ern "a53" in the string
+ "a53-32c .E";returns the list ["a53"]
+ \w
+ Matches with any alphanumeric character; also matches with the underscore (_)
+ import re
+ re.findall("\w", "a53-32c .E")
+ Returns a list of matches to the regular expression pa ern "\w" in the string
+ "a53-32c .E";matchestoanyalphanumericcharacter and returns the list
+ ["a", "5", "3", "3", "2", "c", "E"]
+ .
+ Matches to al characters, including symbols
+ import re
+ re.findall(".", "a53-32c .E")
+ Returns a list of matches to the regular expression pa ern "." in the string
+ "a53-32c .E";matchestoalcharacters and returns the list ["a", "5",
+ "3", "-", "3", "2", "c", " ", ".", "E"]
+ \d
+ Matches to al single digits
+ import re
+ re.findall("\d", "a53-32c .E")
+Returns a list of matches to the regular expression pa ern "\d" in the string
+ "a53-32c .E";matchestoalsingle digits and returns the list ["5", "3",
+ "3", "2"]
+ \s
+ Matches to al single spaces
+ import re
+ re.findall("\d", "a53-32c .E")
+ Returns a list of matches to the regular expression pa ern "\s" in the string
+ "a53-32c .E";matchestoalsingle spaces andreturns the list [" "]
+ \.
+ Matches to the period character
+ import re
+ re.findall("\.", "a53-32c .E")
+ Returns a list of matches to the regular expression pa ern "\." in the string
+ "a53-32c .E";matchestoal instances of the period character and returns
+ the list ["."]
+ +
+ Represents one or more occurrences of a speci c character
+ import re
+ re.findall("\w+", "a53-32c .E")
+ Returns a list of matches to the regular expression pa ern "\w+" in the string
+ "a53-32c .E";matchestooneormoreoccurrencesofanyalphanumeric
+ character and returns the list ["a53", "32c", "E"]
+*
+ Represents, zero, one or more occurrences of a speci c character
+ import re
+ re.findall("\w*", "a53-32c .E")
+ Returns a list of matches to the regular expression pa ern "\w*" in the string
+ "a53-32c .E";matchestooneormoreoccurrencesofanyalphanumeric
+ character and returns the list ["a53", " ", "32c", " ", " ", "E"]
+ { }
+ Represents a speci ed numberofoccurrences of a speci ccharacter; the number is
+ speci edwithin the curly brackets
+ import re
+ re.findall("\w{3}", "a53-32c .E")
+ Returns a list of matches to the regular expression pa ern "\w{3}" in the string
+ "a53-32c .E";matchestoexactly three occurrences of any alphanumeric
+ character and returns the list ["a53","32c"]
